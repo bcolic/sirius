@@ -1,0 +1,77 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: transparent;
+  height: 90px;
+  padding: 0 40px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  box-shadow: none;
+}
+
+.header-left {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #ffe066;
+  text-shadow: 0 2px 12px #000, 0 0 8px #1f1f1f;
+  letter-spacing: 2px;
+  background: none;
+}
+
+.header-middle {
+  flex: 3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2.5rem;
+  background: none;
+}
+
+.header-middle div {
+  color: #f3f3f3;
+  font-size: 1.15rem;
+  font-weight: 500;
+  padding: 8px 18px;
+  border-radius: 20px;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+  text-shadow: 0 2px 8px #000;
+}
+.header-middle div:hover {
+  background: rgba(255, 224, 102, 0.1);
+  color: #ffe066;
+  box-shadow: 0 2px 12px #0002;
+}
+
+.header-right {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 1.2rem;
+  background: none;
+}
+
+.header-right div {
+  color: #f3f3f3;
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 7px 16px;
+  border-radius: 18px;
+  background: rgba(34, 34, 34, 0.18);
+  margin-left: 8px;
+  text-shadow: 0 2px 8px #000;
+  transition: background 0.2s, color 0.2s;
+}
+.header-right div:hover {
+  background: #ffe066;
+  color: #232526;
+}
