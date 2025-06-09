@@ -74,7 +74,7 @@ if (buduciNastupi.length === 0) {
 } else {
   // Kreiraj naslov
   nastupiSekcija.innerHTML =
-    '<h2 class="nastupi-naslov">Nadolazeći nastupi</h2>';
+    '<h2 class="nastupi-naslov">Raspored nastupa</h2>';
 
   // Kreiraj container i listu
   const container = document.createElement("div");
