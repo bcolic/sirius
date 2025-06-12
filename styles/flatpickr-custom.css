@@ -1,0 +1,30 @@
+/* ...existing code... */
+.flatpickr-day.selected,
+.flatpickr-day.startRange,
+.flatpickr-day.endRange,
+.flatpickr-day.selected:focus,
+.flatpickr-day.today.selected {
+  background: #ffe066 !important;
+  color: #232526 !important;
+  border-radius: 50% !important;
+  font-weight: 700;
+  box-shadow: none !important;
+  border: none !important;
+}
+.flatpickr-day.today:not(.selected) {
+  background: #232526 !important;
+  color: #ffe066 !important;
+  border-radius: 50% !important;
+  font-weight: 700;
+  border: 1.5px solid #ffe066 !important;
+}
+.flatpickr-calendar {
+  width: auto !important;
+  min-width: 260px;
+  max-width: 350px;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  margin-top: 0.4em;
+  border-radius: 12px !important;
+  box-shadow: 0 4px 24px #000a;
+}

@@ -35,7 +35,8 @@
   background: none;
 }
 
-.header-middle div {
+.header-middle div,
+.nav-link {
   color: #f3f3f3;
   font-size: 1.15rem;
   font-weight: 500;
@@ -45,7 +46,8 @@
   cursor: pointer;
   text-shadow: 0 2px 8px #000;
 }
-.header-middle div:hover {
+.header-middle div:hover,
+.nav-link:hover {
   background: rgba(255, 224, 102, 0.1);
   color: #ffe066;
   box-shadow: 0 2px 12px #0002;
@@ -58,6 +60,23 @@
   justify-content: flex-end;
   gap: 1.2rem;
   background: none;
+}
+
+.header-social {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px;
+  border-radius: 50%;
+  transition: background 0.2s;
+  color: #ffe066;
+}
+.header-social:hover {
+  background: #ffe06622;
+}
+
+.header-social svg {
+  display: block;
 }
 
 .header-right div {

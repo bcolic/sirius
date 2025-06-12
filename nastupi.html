@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="hr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nastupi - Grupa Sirius</title>
+    <link rel="stylesheet" href="styles/general.css" />
+    <link rel="stylesheet" href="styles/header.css" />
+    <link rel="stylesheet" href="styles/nastupi.css" />
+    <link rel="stylesheet" href="styles/footer.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="header-left">
+        <a href="sirius.html" style="color: inherit; text-decoration: none"
+          >Logo Grupa Sirius</a
+        >
+      </div>
+      <div class="header-middle">
+        <a href="o-nama.html" class="nav-link">O nama</a>
+        <a href="nastupi.html" class="nav-link">Nastupi</a>
+        <a href="slike.html" class="nav-link">Slike</a>
+        <a href="videa.html" class="nav-link">Videa</a>
+        <a href="kontakt.html" class="nav-link">Kontakt</a>
+      </div>
+      <div class="header-right">
+        <a
+          href="https://www.facebook.com/grupa.sirius.cp/"
+          class="header-social"
+          target="_blank"
+          rel="noopener"
+          title="Facebook"
+        >
+          <!-- Facebook SVG -->
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path
+              d="M17 2h-3a5 5 0 0 0-5 5v3H6v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3V2z"
+              fill="#ffe066"
+            />
+          </svg>
+        </a>
+        <a
+          href="https://www.instagram.com/grupasirius/"
+          class="header-social"
+          target="_blank"
+          rel="noopener"
+          title="Instagram"
+        >
+          <!-- Instagram SVG -->
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <rect
+              x="2"
+              y="2"
+              width="20"
+              height="20"
+              rx="6"
+              stroke="#ffe066"
+              stroke-width="2"
+              fill="none"
+            />
+            <circle
+              cx="12"
+              cy="12"
+              r="5"
+              stroke="#ffe066"
+              stroke-width="2"
+              fill="none"
+            />
+            <circle cx="17" cy="7" r="1.2" fill="#ffe066" />
+          </svg>
+        </a>
+      </div>
+    </header>
+    <main>
+      <div class="nastupi-container">
+        <h1 class="nastupi-naslov">Raspored nastupa</h1>
+        <ul class="nastupi-lista js-nastupi"></ul>
+      </div>
+    </main>
+    <footer class="footer">
+      <div class="footer-left">
+        <div>
+          <div>
+            Zapratite nas
+            <div>Facebook link</div>
+            <div>Instagram link</div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-middle">
+        <div>
+          Kontaktirajte nas
+          <div>Poziv na broj</div>
+          <div>Pošalji poruku</div>
+          <div>e-mail</div>
+        </div>
+      </div>
+      <div class="footer-right">
+        <div>
+          Bankovni podaci
+          <div>Broj računa</div>
+          <div>123456789</div>
+          <div>Adresa</div>
+        </div>
+      </div>
+    </footer>
+    <script src="scripts/nastupi.js"></script>
+    <script>
+      // Global header hide/show on scroll for all pages
+      (function () {
+        let lastScrollY = window.scrollY;
+        let ticking = false;
+        const header = document.querySelector(".header");
+        function onScroll() {
+          if (!header) return;
+          if (window.scrollY > lastScrollY && window.scrollY > 80) {
+            header.style.transform = "translateY(-120%)";
+            header.style.transition = "transform 0.35s cubic-bezier(.4,0,.2,1)";
+          } else {
+            header.style.transform = "translateY(0)";
+            header.style.transition = "transform 0.35s cubic-bezier(.4,0,.2,1)";
+          }
+          lastScrollY = window.scrollY;
+          ticking = false;
+        }
+        window.addEventListener("scroll", function () {
+          if (!ticking) {
+            window.requestAnimationFrame(onScroll);
+            ticking = true;
+          }
+        });
+      })();
+    </script>
+  </body>
+</html>

@@ -23,141 +23,199 @@ main {
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18);
 }
 
-/* Sekcija za nastupe */
-.js-nastupi {
-  background: linear-gradient(180deg, #232526 0%, #181c22 100%);
-  padding: 4rem 0 2rem 0;
-  font-family: "Roboto", sans-serif;
-  color: #eee;
-  min-height: 400px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-}
-
-.nastupi-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 1rem;
-}
-
-.nastupi-naslov {
-  text-align: center;
-  font-size: 2.7rem;
-  margin-bottom: 2.5rem;
-  color: #ffe066;
-  letter-spacing: 2px;
-  text-shadow: 0 2px 12px #000, 0 0 8px #1f1f1f;
-  font-weight: 700;
-}
-
-/* Lista nastupa */
-.nastupi-lista {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}
-
-/* Stil za svaki nastup */
-.nastup {
-  display: grid;
-  grid-template-columns: 1fr auto 1fr;
-  align-items: center;
+/* Stilovi za provjeru termina */
+.provjera-termina-box {
+  max-width: 600px;
+  margin: 3.5rem auto 0 auto;
   background: rgba(34, 34, 34, 0.96);
   border-radius: 22px;
-  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.22);
-  border: 2px solid #ffe06633;
-  transition: box-shadow 0.3s, border 0.3s, background 0.3s;
-  width: 100%;
-  font-size: 1.25rem;
+  box-shadow: 0 4px 24px #ffe06633, 0 2px 12px #0002;
+  padding: 3rem 2.5rem 2.2rem 2.5rem;
+  text-align: center;
   position: relative;
-  overflow: hidden;
-  min-height: 60px;
-  padding: 1.2rem 2.8rem 1.2rem 4.5rem; /* primjer manje vertikalne visine */
-  min-height: auto; /* ili manja visina, npr. 60px */
+}
+.provjera-termina-box:hover {
+  box-shadow: 0 8px 32px #ffe06644, 0 2px 12px #0004;
 }
 
-.nastup::before {
-  content: "🎵";
-  position: absolute;
-  left: 1.2rem;
-  font-size: 2.2rem;
-  top: 50%;
-  transform: translateY(-50%);
-  opacity: 0.85;
-  filter: drop-shadow(0 2px 8px #000a);
-  pointer-events: none;
-}
-
-.nastup:hover {
-  background: #232526;
-  box-shadow: 0 8px 32px #ffe06644;
-  border: 2px solid #ffe066;
-}
-
-.nastup .datum {
-  justify-self: start;
-  font-size: 1.5rem;
-  font-weight: 700;
+.provjera-naslov {
   color: #ffe066;
-  padding-left: 0.5rem;
-  text-align: left;
-  min-width: 120px;
+  font-size: 2rem;
+  margin-bottom: 1.1rem;
+  letter-spacing: 1.5px;
+  font-weight: 700;
+  text-shadow: 0 2px 12px #000, 0 0 8px #1f1f1f;
+}
+
+.provjera-opis {
+  color: #e0e0e0;
+  font-size: 1.15rem;
+  margin-bottom: 1.7rem;
+  line-height: 1.6;
   text-shadow: 0 2px 8px #000a;
+}
+
+#provjera-termina-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.2rem;
+  margin-bottom: 1.5rem;
+  font-size: 1.15rem;
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.provjera-label {
+  color: #ffe066;
+  font-size: 1.1rem;
+  margin-bottom: 0.3rem;
+  font-weight: 500;
   letter-spacing: 0.5px;
 }
 
-.nastup .separator {
+.provjera-datum-container {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-width: 25px;
-  width: 100px;
+  background: #232526;
+  border-radius: 10px;
+  border: 2px solid #ffe066cc;
+  padding: 0.7rem 2.2rem;
+  margin: 0.5rem 0;
+  width: 100%;
+  max-width: 350px;
+  transition: border 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 8px #0002;
+  cursor: pointer;
   position: relative;
 }
-.nastup .separator::before {
-  content: "";
-  display: block;
-  width: 60px;
-  height: 3px;
+.provjera-datum-container:hover,
+.provjera-datum-container:focus-within {
+  border: 2px solid #ffe066;
+  box-shadow: 0 4px 18px #ffe06633;
+}
+
+#provjera-datum {
+  background: transparent;
+  border: none;
+  color: #ffe066;
+  font-size: 1.25rem;
+  outline: none;
+  width: 100%;
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  caret-color: transparent;
+}
+#provjera-datum::-webkit-calendar-picker-indicator {
+  filter: invert(1) sepia(1) saturate(5) hue-rotate(10deg);
+  cursor: pointer;
+}
+#provjera-datum:focus {
+  outline: none;
+}
+#provjera-termina-form button.provjera-btn {
   background: #ffe066;
-  border-radius: 3px;
+  color: #232526;
+  font-weight: 700;
+  border: none;
+  border-radius: 10px;
+  padding: 0.7rem 2.2rem;
+  font-size: 1.15rem;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 8px #0002;
+  margin-top: 0.5rem;
 }
-
-.nastup .mjesto {
-  justify-self: end;
-  text-align: right;
-  font-size: 1.5rem;
+#provjera-termina-form button.provjera-btn:hover {
+  background: #fff;
+  color: #232526;
+  box-shadow: 0 4px 18px #ffe06633;
+}
+#provjera-odgovor {
+  margin-top: 1.2rem;
+  font-size: 1.18rem;
+  min-height: 2.2em;
+}
+.zauzeto {
+  color: #ff4d4d;
+  font-weight: 700;
+}
+.slobodno {
+  color: #4dff7a;
+  font-weight: 700;
+}
+.provjera-napomena {
+  margin-top: 1.7rem;
+  color: #ffe066;
+  font-size: 1.05rem;
+  background: rgba(34, 34, 34, 0.7);
+  border-radius: 8px;
+  padding: 0.7em 1em;
+  box-shadow: 0 2px 8px #0002;
+  display: inline-block;
+}
+.provjera-napomena a {
+  color: #ffe066;
+  text-decoration: underline;
+  font-weight: 500;
+}
+.provjera-napomena a:hover {
   color: #fff;
-  font-style: italic;
-  min-width: 120px;
-  padding-right: 0.5rem;
-  text-shadow: 0 2px 8px #000a;
-  letter-spacing: 0.2px;
 }
 
-/* Responsive */
-@media (max-width: 600px) {
-  .nastup {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 1.2rem;
+@media (max-width: 700px) {
+  .provjera-termina-box {
+    max-width: 98vw;
+    padding: 1.2rem 0.5rem 1.2rem 0.5rem;
   }
+  #provjera-termina-form {
+    max-width: 98vw;
+  }
+}
 
-  .nastup::before {
-    top: 0.7rem;
-    left: 0.7rem;
-    transform: none;
-  }
+/* Poboljšan UX za datum input: cijeli prostor je klikabilan i otvara kalendar */
+.provjera-datum-container {
+  cursor: pointer;
+}
+.provjera-datum-container input[type="date"] {
+  width: 100%;
+  background: transparent;
+  color: #ffe066;
+  border: none;
+  font-size: 1.1rem;
+  padding: 0.7em 0.5em;
+  outline: none;
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  caret-color: transparent;
+}
+.provjera-datum-container input[type="date"]::-webkit-input-placeholder {
+  color: #ffe06699;
+}
+.provjera-datum-container
+  input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(80%) sepia(80%) saturate(300%) hue-rotate(10deg);
+  cursor: pointer;
+}
 
-  .nastup .datum,
-  .nastup .mjesto {
-    padding-left: 2rem;
-    text-align: left;
-  }
-
-  .nastup .separator {
-    display: none;
-  }
+/* Stil za fake button koji prekriva cijeli container i omogućuje klik bilo gdje za otvaranje kalendara */
+#provjera-datum-fake-btn {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 2;
+  padding: 0;
+  margin: 0;
 }

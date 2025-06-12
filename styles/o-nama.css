@@ -1,0 +1,50 @@
+/* CSS za sekciju O nama - Grupa Sirius */
+
+.o-nama {
+  background: linear-gradient(180deg, #181c22 0%, #232526 100%);
+  padding: 0 0 60px 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.onama-container {
+  max-width: 1100px;
+  margin: 120px auto 0 auto;
+  background: rgba(28, 30, 36, 0.96);
+  border-radius: 28px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.22);
+  padding: 3.5rem 3.5rem 2.5rem 3.5rem;
+  color: #f3f3f3;
+  position: relative;
+  z-index: 2;
+}
+
+.onama-naslov {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #ffe066;
+  margin-bottom: 2.2rem;
+  letter-spacing: 2px;
+  text-shadow: 0 2px 12px #000, 0 0 8px #1f1f1f;
+  font-weight: 700;
+}
+
+.onama-container p {
+  font-size: 1.15rem;
+  line-height: 1.7;
+  margin-bottom: 1.3rem;
+  color: #e0e0e0;
+  text-shadow: 0 2px 8px #000a;
+}
+
+@media (max-width: 900px) {
+  .onama-container {
+    padding: 2rem 1rem 1.5rem 1rem;
+    margin-top: 90px;
+  }
+  .onama-naslov {
+    font-size: 2rem;
+  }
+}

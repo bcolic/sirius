@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="hr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grupa Sirius - Službena Web stranica</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles/general.css" />
+    <link rel="stylesheet" href="styles/header.css" />
+    <link rel="stylesheet" href="styles/main.css" />
+    <link rel="stylesheet" href="styles/footer.css" />
+    <link rel="stylesheet" href="styles/flatpickr.min.css" />
+    <link rel="stylesheet" href="styles/flatpickr-dark.min.css" />
+    <link rel="stylesheet" href="styles/flatpickr-custom.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="header-left">
+        <a href="sirius.html" class="logo">Logo Grupa Sirius</a>
+      </div>
+      <nav class="header-middle" aria-label="Glavna navigacija">
+        <a href="o-nama.html" class="nav-link">O nama</a>
+        <a href="nastupi.html" class="nav-link">Nastupi</a>
+        <a href="slike.html" class="nav-link">Slike</a>
+        <a href="videa.html" class="nav-link">Videa</a>
+        <a href="kontakt.html" class="nav-link">Kontakt</a>
+      </nav>
+      <div class="header-right">
+        <a
+          href="https://www.facebook.com/grupa.sirius.cp/"
+          class="header-social"
+          target="_blank"
+          rel="noopener"
+          title="Facebook"
+        >
+          <!-- Facebook SVG -->
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path
+              d="M17 2h-3a5 5 0 0 0-5 5v3H6v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3V2z"
+              fill="#ffe066"
+            />
+          </svg>
+        </a>
+        <a
+          href="https://www.instagram.com/grupasirius/"
+          class="header-social"
+          target="_blank"
+          rel="noopener"
+          title="Instagram"
+        >
+          <!-- Instagram SVG -->
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <rect
+              x="2"
+              y="2"
+              width="20"
+              height="20"
+              rx="6"
+              stroke="#ffe066"
+              stroke-width="2"
+              fill="none"
+            />
+            <circle
+              cx="12"
+              cy="12"
+              r="5"
+              stroke="#ffe066"
+              stroke-width="2"
+              fill="none"
+            />
+            <circle cx="17" cy="7" r="1.2" fill="#ffe066" />
+          </svg>
+        </a>
+      </div>
+    </header>
+    <main>
+      <section class="cover-pic">
+        <img
+          src="Pictures/Cover-pics/sirius-cover.jpg"
+          alt="Grupa Sirius cover"
+        />
+      </section>
+      <section class="provjera-termina-box" id="provjera-termina-box">
+        <h2 class="provjera-naslov">Provjerite slobodan termin</h2>
+        <p class="provjera-opis">
+          Planirate svadbu, proslavu ili događaj? Unesite željeni datum i odmah
+          saznajte je li bend Sirius slobodan! Rezervirajte svoj datum na
+          vrijeme i osigurajte vrhunsku zabavu za vaš poseban dan.
+        </p>
+        <form id="provjera-termina-form" autocomplete="off">
+          <label for="provjera-datum" class="provjera-label"
+            >Odaberite datum:</label
+          >
+          <div class="provjera-datum-container" id="provjera-datum-container">
+            <input
+              type="text"
+              id="provjera-datum"
+              name="provjera-datum"
+              required
+              readonly
+              aria-label="Odaberite datum"
+            />
+            <button
+              type="button"
+              id="provjera-datum-fake-btn"
+              tabindex="-1"
+              aria-hidden="true"
+            ></button>
+          </div>
+          <button type="submit" class="provjera-btn">
+            Provjeri dostupnost
+          </button>
+        </form>
+        <div id="provjera-odgovor"></div>
+        <div class="provjera-napomena">
+          <span>
+            Za brzu rezervaciju ili dodatne informacije, kontaktirajte nas putem
+            <a href="kontakt.html">kontakt forme</a> ili na društvenim mrežama!
+          </span>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="footer-left">
+        <div>
+          <span>Zapratite nas</span>
+          <div>Facebook link</div>
+          <div>Instagram link</div>
+        </div>
+      </div>
+      <div class="footer-middle">
+        <div>
+          <span>Kontaktirajte nas</span>
+          <div>Poziv na broj</div>
+          <div>Pošalji poruku</div>
+          <div>e-mail</div>
+        </div>
+      </div>
+      <div class="footer-right">
+        <div>
+          <span>Bankovni podaci</span>
+          <div>Broj računa</div>
+          <div>123456789</div>
+          <div>Adresa</div>
+        </div>
+      </div>
+    </footer>
+    <script src="scripts/nastupi.js"></script>
+    <script src="scripts/flatpickr.min.js"></script>
+    <script src="scripts/sirius.js"></script>
+  </body>
+</html>

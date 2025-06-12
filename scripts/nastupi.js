@@ -18,7 +18,7 @@ const nastupi = [
   { datum: "2025-08-23", grad: "Gabela", sala: "Lav" },
   { datum: "2025-08-24", grad: "Međugorje", sala: "Etno selo" },
   { datum: "2025-08-30", grad: "Međugorje", sala: "Dodig bazeni" },
-  { datum: "2025-09-06", grad: "Opatija", sala: "SS???" },
+  { datum: "2025-09-06", grad: "Zaton", sala: "Tavern Arka" },
   { datum: "2025-09-13", grad: "Neum", sala: "SS???" },
   { datum: "2025-09-19", grad: "Gabela", sala: "Lav" },
   { datum: "2025-09-20", grad: "Čule", sala: "Luna" },
@@ -31,6 +31,7 @@ const nastupi = [
   { datum: "2025-10-12", grad: "Gabela", sala: "Lav" },
   { datum: "2025-10-18", grad: "Otok Pag", sala: "SS???" },
 ];
+window.nastupi = nastupi;
 
 // Funkcija za formatiranje datuma u "14. lipnja 2025."
 function formatirajDatum(isoDatum) {
@@ -72,16 +73,9 @@ if (buduciNastupi.length === 0) {
   nastupiSekcija.innerHTML =
     '<p class="nastupi-prazno">Trenutno nema zakazanih nastupa.</p>';
 } else {
-  // Kreiraj naslov
-  nastupiSekcija.innerHTML =
-    '<h2 class="nastupi-naslov">Raspored nastupa</h2>';
-
-  // Kreiraj container i listu
-  const container = document.createElement("div");
-  container.className = "nastupi-container";
-
+  // Kreiraj listu
   const lista = document.createElement("ul");
-  lista.className = "nastupi-lista";
+  lista.className = "nastupi-lista js-nastupi";
 
   // Dodaj svaki nastup kao karticu s separatorom
   buduciNastupi.forEach((n) => {
@@ -97,6 +91,6 @@ if (buduciNastupi.length === 0) {
     lista.appendChild(item);
   });
 
-  container.appendChild(lista);
-  nastupiSekcija.appendChild(container);
+  nastupiSekcija.innerHTML = "";
+  nastupiSekcija.appendChild(lista);
 }

@@ -1,0 +1,215 @@
+/* CSS za sekciju Nastupi - Grupa Sirius */
+
+.nastupi-section {
+  min-height: 100vh;
+  background: linear-gradient(180deg, #232526 0%, #181c22 100%);
+  padding: 0;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.nastupi-container {
+  max-width: 1100px;
+  margin: 120px auto 0 auto;
+  /* Uklonjen dodatni padding-top, margin-top je 120px kao na o-nama */
+  background: rgba(28, 30, 36, 0.96);
+  border-radius: 28px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.22);
+  padding: 3.5rem 3.5rem 2.5rem 3.5rem;
+  color: #f3f3f3;
+  position: relative;
+  z-index: 2;
+}
+
+@media (max-width: 900px) {
+  .nastupi-container {
+    padding: 2rem 1rem 1.5rem 1rem;
+    margin-top: 90px;
+  }
+}
+
+.nastupi-naslov {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #ffe066;
+  margin-bottom: 2.2rem;
+  letter-spacing: 2px;
+  text-shadow: 0 2px 12px #000, 0 0 8px #1f1f1f;
+  font-weight: 700;
+}
+
+.nastupi-lista {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.nastup {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  background: rgba(34, 34, 34, 0.96);
+  border-radius: 22px;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.22);
+  border: 2px solid #ffe06633;
+  transition: box-shadow 0.3s, border 0.3s, background 0.3s;
+  width: 100%;
+  font-size: 1.25rem;
+  position: relative;
+  overflow: hidden;
+  min-height: 60px;
+  padding: 1.2rem 2.8rem 1.2rem 4.5rem;
+}
+
+.nastup::before {
+  content: "🎵";
+  position: absolute;
+  left: 1.2rem;
+  font-size: 2.2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0.85;
+  filter: drop-shadow(0 2px 8px #000a);
+  pointer-events: none;
+}
+
+.nastup:hover {
+  background: #232526;
+  box-shadow: 0 8px 32px #ffe06644;
+  border: 2px solid #ffe066;
+}
+
+.nastup .datum {
+  justify-self: start;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #ffe066;
+  padding-left: 0.5rem;
+  text-align: left;
+  min-width: 120px;
+  text-shadow: 0 2px 8px #000a;
+  letter-spacing: 0.5px;
+}
+
+.nastup .separator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 25px;
+  width: 100px;
+  position: relative;
+}
+.nastup .separator::before {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: #ffe066;
+  border-radius: 3px;
+}
+
+.nastup .mjesto {
+  justify-self: end;
+  text-align: right;
+  font-size: 1.5rem;
+  color: #fff;
+  font-style: italic;
+  min-width: 120px;
+  padding-right: 0.5rem;
+  text-shadow: 0 2px 8px #000a;
+  letter-spacing: 0.2px;
+}
+
+.provjera-termina-box {
+  margin-top: 2.5rem;
+  background: rgba(34, 34, 34, 0.92);
+  border-radius: 16px;
+  box-shadow: 0 2px 12px #0002;
+  padding: 2rem 1.5rem 1.5rem 1.5rem;
+  text-align: center;
+}
+
+.provjera-naslov {
+  color: #ffe066;
+  font-size: 1.3rem;
+  margin-bottom: 1.2rem;
+  letter-spacing: 1px;
+}
+
+#provjera-termina-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.2rem;
+}
+#provjera-datum {
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  border: 1.5px solid #ffe06699;
+  background: #232526;
+  color: #ffe066;
+  font-size: 1.1rem;
+  outline: none;
+  margin-bottom: 0.5rem;
+  transition: border 0.2s;
+}
+#provjera-datum:focus {
+  border: 1.5px solid #ffe066;
+}
+#provjera-termina-form button {
+  background: #ffe066;
+  color: #232526;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  padding: 0.5rem 1.5rem;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+#provjera-termina-form button:hover {
+  background: #fff;
+  color: #232526;
+}
+#provjera-odgovor {
+  margin-top: 1rem;
+  font-size: 1.15rem;
+  min-height: 2.2em;
+}
+.zauzeto {
+  color: #ff4d4d;
+  font-weight: 600;
+}
+.slobodno {
+  color: #4dff7a;
+  font-weight: 600;
+}
+
+@media (max-width: 600px) {
+  .nastup {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1.2rem;
+  }
+
+  .nastup::before {
+    top: 0.7rem;
+    left: 0.7rem;
+    transform: none;
+  }
+
+  .nastup .datum,
+  .nastup .mjesto {
+    padding-left: 2rem;
+    text-align: left;
+  }
+
+  .nastup .separator {
+    display: none;
+  }
+}
