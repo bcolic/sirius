@@ -211,9 +211,26 @@
   color: #232526;
   border: 2px solid #ffe066;
 }
+.kontakt-akcija-btn:hover svg {
+  /* Reset fill za SMS ikonu */
+  fill: none !important;
+}
+.kontakt-akcija-btn:hover svg rect,
+.kontakt-akcija-btn:hover svg line,
+.kontakt-akcija-btn:hover svg path {
+  stroke: #fff !important;
+  fill: none !important;
+}
+.kontakt-akcija-btn:hover svg circle {
+  stroke: #fff !important;
+  fill: none !important;
+}
+.kontakt-akcija-btn:hover,
+.kontakt-akcija-btn:hover span {
+  color: #fff !important;
+}
 
 .kontakt-akcija-btn svg {
-  vertical-align: middle;
   display: block;
   margin-right: 0.2em;
 }

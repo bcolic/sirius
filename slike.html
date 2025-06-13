@@ -3,27 +3,44 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>O nama - Grupa Sirius</title>
+    <title>Slike - Grupa Sirius</title>
     <link rel="stylesheet" href="styles/general.css" />
     <link rel="stylesheet" href="styles/header.css" />
     <link rel="stylesheet" href="styles/main.css" />
-    <link rel="stylesheet" href="styles/o-nama.css" />
+    <link rel="stylesheet" href="styles/slike.css" />
     <link rel="stylesheet" href="styles/footer.css" />
   </head>
   <body>
     <header class="header">
       <div class="header-left">
-        <a href="sirius.html" style="color: inherit; text-decoration: none"
-          >Logo Grupa Sirius</a
-        >
+        <a href="sirius.html" class="logo">Logo Grupa Sirius</a>
       </div>
-      <div class="header-middle">
+      <nav class="header-middle" aria-label="Glavna navigacija">
         <a href="o-nama.html" class="nav-link">O nama</a>
         <a href="nastupi.html" class="nav-link">Nastupi</a>
         <a href="slike.html" class="nav-link">Slike</a>
         <a href="videa.html" class="nav-link">Videa</a>
         <a href="kontakt.html" class="nav-link">Kontakt</a>
-      </div>
+      </nav>
+      <button
+        class="header-hamburger"
+        id="header-hamburger"
+        aria-label="Otvori izbornik"
+      >
+        <span></span>
+      </button>
+      <nav
+        class="header-mobile-nav"
+        id="header-mobile-nav"
+        aria-label="Mobilna navigacija"
+      >
+        <a href="o-nama.html" class="nav-link">O nama</a>
+        <a href="nastupi.html" class="nav-link">Nastupi</a>
+        <a href="slike.html" class="nav-link">Slike</a>
+        <a href="videa.html" class="nav-link">Videa</a>
+        <a href="kontakt.html" class="nav-link">Kontakt</a>
+      </nav>
+      <div class="header-mobile-overlay" id="header-mobile-overlay"></div>
       <div class="header-right">
         <a
           href="https://www.facebook.com/grupa.sirius.cp/"
@@ -32,7 +49,6 @@
           rel="noopener"
           title="Facebook"
         >
-          <!-- Facebook SVG -->
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
             <path
               d="M17 2h-3a5 5 0 0 0-5 5v3H6v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3V2z"
@@ -47,7 +63,6 @@
           rel="noopener"
           title="Instagram"
         >
-          <!-- Instagram SVG -->
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
             <rect
               x="2"
@@ -72,56 +87,24 @@
         </a>
       </div>
     </header>
-
     <main>
-      <section class="o-nama">
-        <div class="onama-container">
-          <h1 class="onama-naslov">O nama</h1>
-          <p>
-            Bend Sirius, nazvan po najsjajnijoj zvijezdi na noćnom nebu,
-            simbolizira ono što i sami težimo biti na svakoj pozornici – sjajna
-            točka svakog slavlja, vodič kroz nezaboravne glazbene trenutke i
-            jamac vrhunske zabave. Već više od desetljeća Sirius s uspjehom
-            nastupa na različitim događajima, ostavljajući snažan dojam na
-            publiku svojim talentom, strašću i profesionalnim pristupom.
-          </p>
-          <p>
-            Od samih početaka gradimo reputaciju pouzdanog i energičnog benda
-            koji zna prepoznati potrebe svakog događaja. Naša posvećenost glazbi
-            i ljudima rezultirala je osvajanjem prestižnog priznanja – titule
-            najboljeg benda u Bosni i Hercegovini u sklopu popularnog
-            televizijskog showa “Bend za 5”.
-          </p>
-          <p>
-            Naš svestrani sastav uključuje gitaru, bas gitaru, klavijature,
-            bubnjeve, harmoniku, te više vokalnih izvođača – pjevače i pjevačicu
-            – što nam omogućuje iznimnu glazbenu fleksibilnost i autentičnost u
-            izvedbi.
-          </p>
-          <p>
-            Repertoar benda Sirius obuhvaća širok spektar glazbenih stilova,
-            prilagođen publici svih generacija i ukusa – od nježnih melodija za
-            prve plesove do energičnih ritmova koji pune plesni podij. Bilo da
-            se radi o svadbi, korporativnom događaju, proslavi ili koncertu na
-            otvorenom, prilagođavamo se svakom ambijentu s ciljem stvaranja
-            vrhunskog glazbenog doživljaja.
-          </p>
-          <p>
-            Tijekom godina imali smo čast dijeliti pozornicu s brojnim poznatim
-            glazbenicima, među kojima su Giuliano, Dalmatino, Neda Ukraden,
-            Mirza Selimović, Jozo Vučić i mnogi drugi. Svaka suradnja dodatno
-            nas je oblikovala i obogatila naše glazbeno iskustvo.
-          </p>
-          <p>
-            Sirius nije samo bend – Sirius je doživljaj. Naša glazba ne dolazi
-            samo iz instrumenata, već iz srca. Svaki nastup za nas je nova
-            priča, nova prilika da ostavimo trag i pretvorimo vaš događaj u
-            nešto zaista posebno.
-          </p>
+      <section class="slike-section">
+        <div class="slike-container">
+          <h1 class="slike-naslov">Galerija slika</h1>
+          <div class="slike-grid" id="slike-grid"></div>
         </div>
       </section>
+      <div id="lightbox" class="lightbox" style="display: none">
+        <span class="lightbox-close" id="lightbox-close">&times;</span>
+        <span class="lightbox-arrow lightbox-arrow-left" id="lightbox-prev"
+          >&#10094;</span
+        >
+        <img class="lightbox-img" id="lightbox-img" src="" alt="Slika" />
+        <span class="lightbox-arrow lightbox-arrow-right" id="lightbox-next"
+          >&#10095;</span
+        >
+      </div>
     </main>
-
     <footer class="footer">
       <div class="footer-left">
         <div class="footer-socials-wrap">
@@ -196,5 +179,7 @@
         </div>
       </div>
     </footer>
+    <script src="scripts/slike.js"></script>
+    <script src="scripts/header-mobile.js"></script>
   </body>
 </html>
