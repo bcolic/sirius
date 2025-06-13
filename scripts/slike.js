@@ -3,7 +3,7 @@ const slike = [
   "Pictures/Slike/ACDC7257.jpg",
   "Pictures/Slike/ACDC7300.jpg",
   "Pictures/Slike/ACDC7335-2.jpg",
-  // "Pictures/Slike/acdc7353.jpg",
+  // "Pictures/Slike/ACDC7353.jpg",
   // "Pictures/Slike/ACDC7388-2.jpg",
   // "Pictures/Slike/ACDC7488-2.jpg",
   // "Pictures/Slike/ACDC7519.jpg",
