@@ -3,11 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Nastupi - Grupa Sirius</title>
+    <title>Ispunjeni obrasci mladenaca - Grupa Sirius</title>
     <link rel="stylesheet" href="styles/general.css" />
     <link rel="stylesheet" href="styles/header.css" />
-    <link rel="stylesheet" href="styles/nastupi.css" />
+    <link rel="stylesheet" href="styles/main.css" />
+    <link rel="stylesheet" href="styles/obrazac-za-mladence.css" />
     <link rel="stylesheet" href="styles/footer.css" />
+    <link rel="stylesheet" href="styles/ispunjeni-obrasci.css" />
+    <link rel="stylesheet" href="styles/custom-scroll.css" />
   </head>
   <body>
     <header class="header">
@@ -37,7 +40,6 @@
           rel="noopener"
           title="Facebook"
         >
-          <!-- Facebook SVG -->
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
             <path
               d="M17 2h-3a5 5 0 0 0-5 5v3H6v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3V2z"
@@ -52,7 +54,6 @@
           rel="noopener"
           title="Instagram"
         >
-          <!-- Instagram SVG -->
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
             <rect
               x="2"
@@ -77,12 +78,29 @@
         </a>
       </div>
     </header>
+
     <main>
-      <div class="nastupi-container">
-        <h1 class="nastupi-naslov">Raspored nastupa</h1>
-        <ul class="nastupi-lista js-nastupi"></ul>
-      </div>
+      <section class="obrasci-section">
+        <div class="obrasci-container">
+          <h1 class="obrasci-naslov">Ispunjeni obrasci mladenaca</h1>
+          <div id="obrasci-lista" class="obrasci-lista">
+            <div class="obrasci-loading">Učitavanje...</div>
+          </div>
+          <div id="obrasci-modal" class="obrasci-modal" style="display: none">
+            <div class="obrasci-modal-content" id="obrasci-modal-content">
+              <div
+                class="obrasci-scroll-container"
+                id="obrasci-scroll-container"
+              ></div>
+            </div>
+            <span class="obrasci-modal-close" id="obrasci-modal-close"
+              >&times;</span
+            >
+          </div>
+        </div>
+      </section>
     </main>
+
     <footer class="footer">
       <div class="footer-left">
         <div class="footer-socials-wrap">
@@ -157,32 +175,12 @@
         </div>
       </div>
     </footer>
-    <script src="scripts/nastupi.js"></script>
-    <script>
-      // Global header hide/show on scroll for all pages
-      (function () {
-        let lastScrollY = window.scrollY;
-        let ticking = false;
-        const header = document.querySelector(".header");
-        function onScroll() {
-          if (!header) return;
-          if (window.scrollY > lastScrollY && window.scrollY > 80) {
-            header.style.transform = "translateY(-120%)";
-            header.style.transition = "transform 0.35s cubic-bezier(.4,0,.2,1)";
-          } else {
-            header.style.transform = "translateY(0)";
-            header.style.transition = "transform 0.35s cubic-bezier(.4,0,.2,1)";
-          }
-          lastScrollY = window.scrollY;
-          ticking = false;
-        }
-        window.addEventListener("scroll", function () {
-          if (!ticking) {
-            window.requestAnimationFrame(onScroll);
-            ticking = true;
-          }
-        });
-      })();
-    </script>
+
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+
+    <!-- JS -->
+    <script src="scripts/ispunjeni-obrasci.js"></script>
   </body>
 </html>

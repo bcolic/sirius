@@ -3,11 +3,18 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Nastupi - Grupa Sirius</title>
+    <title>Grupa Sirius - Službena Web stranica</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="styles/general.css" />
     <link rel="stylesheet" href="styles/header.css" />
-    <link rel="stylesheet" href="styles/nastupi.css" />
+    <link rel="stylesheet" href="styles/main.css" />
     <link rel="stylesheet" href="styles/footer.css" />
+    <link rel="stylesheet" href="styles/flatpickr.min.css" />
+    <link rel="stylesheet" href="styles/flatpickr-dark.min.css" />
+    <link rel="stylesheet" href="styles/flatpickr-custom.css" />
   </head>
   <body>
     <header class="header">
@@ -29,6 +36,25 @@
           >Ispunjeni obrasci mladenaca</a
         >
       </nav>
+      <button
+        class="header-hamburger"
+        id="header-hamburger"
+        aria-label="Otvori izbornik"
+      >
+        <span></span>
+      </button>
+      <nav
+        class="header-mobile-nav"
+        id="header-mobile-nav"
+        aria-label="Mobilna navigacija"
+      >
+        <a href="o-nama.html" class="nav-link">O nama</a>
+        <a href="nastupi.html" class="nav-link">Nastupi</a>
+        <a href="slike.html" class="nav-link">Slike</a>
+        <a href="videa.html" class="nav-link">Videa</a>
+        <a href="kontakt.html" class="nav-link">Kontakt</a>
+      </nav>
+      <div class="header-mobile-overlay" id="header-mobile-overlay"></div>
       <div class="header-right">
         <a
           href="https://www.facebook.com/grupa.sirius.cp/"
@@ -78,10 +104,57 @@
       </div>
     </header>
     <main>
-      <div class="nastupi-container">
-        <h1 class="nastupi-naslov">Raspored nastupa</h1>
-        <ul class="nastupi-lista js-nastupi"></ul>
-      </div>
+      <section class="cover-pic">
+        <picture>
+          <source
+            srcset="Pictures/Cover-pics/sirius-cover-mob.jpg"
+            media="(max-width: 700px)"
+          />
+          <img
+            src="Pictures/Cover-pics/sirius-cover.jpg"
+            alt="Grupa Sirius cover"
+          />
+        </picture>
+      </section>
+      <section class="provjera-termina-box" id="provjera-termina-box">
+        <h2 class="provjera-naslov">Provjerite slobodan termin</h2>
+        <p class="provjera-opis">
+          Planirate svadbu, proslavu ili događaj? Unesite željeni datum i odmah
+          saznajte je li bend Sirius slobodan! Rezervirajte svoj datum na
+          vrijeme i osigurajte vrhunsku zabavu za vaš poseban dan.
+        </p>
+        <form id="provjera-termina-form" autocomplete="off">
+          <label for="provjera-datum" class="provjera-label"
+            >Odaberite datum:</label
+          >
+          <div class="provjera-datum-container" id="provjera-datum-container">
+            <input
+              type="text"
+              id="provjera-datum"
+              name="provjera-datum"
+              required
+              readonly
+              aria-label="Odaberite datum"
+            />
+            <button
+              type="button"
+              id="provjera-datum-fake-btn"
+              tabindex="-1"
+              aria-hidden="true"
+            ></button>
+          </div>
+          <button type="submit" class="provjera-btn">
+            Provjeri dostupnost
+          </button>
+        </form>
+        <div id="provjera-odgovor"></div>
+        <div class="provjera-napomena">
+          <span>
+            Za brzu rezervaciju ili dodatne informacije, kontaktirajte nas putem
+            <a href="kontakt.html">kontakt forme</a> ili na društvenim mrežama!
+          </span>
+        </div>
+      </section>
     </main>
     <footer class="footer">
       <div class="footer-left">
@@ -158,31 +231,8 @@
       </div>
     </footer>
     <script src="scripts/nastupi.js"></script>
-    <script>
-      // Global header hide/show on scroll for all pages
-      (function () {
-        let lastScrollY = window.scrollY;
-        let ticking = false;
-        const header = document.querySelector(".header");
-        function onScroll() {
-          if (!header) return;
-          if (window.scrollY > lastScrollY && window.scrollY > 80) {
-            header.style.transform = "translateY(-120%)";
-            header.style.transition = "transform 0.35s cubic-bezier(.4,0,.2,1)";
-          } else {
-            header.style.transform = "translateY(0)";
-            header.style.transition = "transform 0.35s cubic-bezier(.4,0,.2,1)";
-          }
-          lastScrollY = window.scrollY;
-          ticking = false;
-        }
-        window.addEventListener("scroll", function () {
-          if (!ticking) {
-            window.requestAnimationFrame(onScroll);
-            ticking = true;
-          }
-        });
-      })();
-    </script>
+    <script src="scripts/flatpickr.min.js"></script>
+    <script src="scripts/sirius.js"></script>
+    <script src="scripts/header-mobile.js"></script>
   </body>
 </html>
