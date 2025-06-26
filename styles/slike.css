@@ -1,0 +1,184 @@
+.slike-section {
+  min-height: 100vh;
+  background: linear-gradient(180deg, #181c22 0%, #232526 100%);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 0 0 60px 0;
+}
+
+.slike-container {
+  max-width: 1400px;
+  margin: 120px auto 0 auto;
+  background: rgba(28, 30, 36, 0.97);
+  border-radius: 28px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.22);
+  padding: 3.5rem 2.5rem 2.5rem 2.5rem;
+  color: #f3f3f3;
+  position: relative;
+  z-index: 2;
+}
+
+.slike-naslov {
+  text-align: center;
+  font-size: 2.2rem;
+  color: #ffe066;
+  margin-bottom: 2.2rem;
+  letter-spacing: 2px;
+  text-shadow: 0 2px 12px #000, 0 0 8px #1f1f1f;
+  font-weight: 700;
+}
+
+.slike-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+  margin-top: 1.5rem;
+  width: 100%;
+}
+
+.slike-thumb {
+  width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  border-radius: 14px;
+  box-shadow: 0 2px 12px #0004;
+  cursor: pointer;
+  transition: transform 0.18s, box-shadow 0.18s;
+  border: 2px solid #ffe06622;
+  background: #181c22;
+}
+.slike-thumb:hover {
+  transform: scale(1.04) rotate(-1deg);
+  box-shadow: 0 8px 32px #ffe06644, 0 2px 12px #0006;
+  border: 2px solid #ffe066;
+}
+
+.lightbox {
+  position: fixed;
+  z-index: 1001;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(24, 28, 34, 0.97);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.2s;
+}
+.lightbox-img {
+  max-width: 92vw;
+  max-height: 88vh;
+  border-radius: 18px;
+  box-shadow: 0 8px 32px #000a;
+  border: 3px solid #ffe066;
+  background: #232526;
+}
+.lightbox-close {
+  position: absolute;
+  top: 2.5vw;
+  right: 3vw;
+  font-size: 2.5rem;
+  color: #ffe066;
+  cursor: pointer;
+  font-weight: 700;
+  z-index: 2;
+  text-shadow: 0 2px 12px #000, 0 0 8px #1f1f1f;
+  transition: color 0.2s;
+}
+.lightbox-close:hover {
+  color: #fff;
+}
+
+.lightbox-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #ffe066;
+  font-size: 2.2rem;
+  font-weight: 900;
+  background: none;
+  border: none;
+  width: auto;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  user-select: none;
+  z-index: 3;
+  box-shadow: none;
+  transition: color 0.18s, transform 0.18s, opacity 0.18s;
+  opacity: 0.93;
+  padding: 0.1em 0.3em;
+}
+
+.lightbox-arrow-left {
+  left: 1vw;
+}
+
+.lightbox-arrow-right {
+  right: 1vw;
+}
+
+.lightbox-arrow:hover {
+  color: #fff;
+  transform: translateY(-50%) scale(1.13);
+  opacity: 1;
+}
+
+.invisible {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s;
+}
+
+/* Poboljšaj vidljivost na manjim ekranima */
+@media (max-width: 700px) {
+  .lightbox-arrow {
+    font-size: 2.5rem;
+    width: 2.2em;
+    height: 2.2em;
+    border-width: 2px;
+  }
+  .lightbox-arrow-left {
+    left: 1vw;
+  }
+  .lightbox-arrow-right {
+    right: 1vw;
+  }
+}
+
+@media (max-width: 1200px) {
+  .slike-container {
+    max-width: 98vw;
+    padding: 1.2rem 0.5rem 1.2rem 0.5rem;
+    margin-top: 90px;
+  }
+  .slike-grid {
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  }
+}
+@media (max-width: 900px) {
+  .slike-container {
+    padding: 1.2rem 0.5rem 1.2rem 0.5rem;
+    margin-top: 90px;
+  }
+  .slike-naslov {
+    font-size: 1.5rem;
+  }
+  .slike-grid {
+    gap: 0.7rem;
+  }
+}
+@media (max-width: 700px) {
+  .slike-naslov {
+    font-size: 1.5rem;
+  }
+  .slike-grid {
+    gap: 0.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  }
+}

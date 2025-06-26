@@ -1,0 +1,36 @@
+/* RESET I OSNOVNO */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Roboto", Arial, sans-serif;
+  color: #f3f3f3;
+  background: linear-gradient(180deg, #181c22 0%, #232526 100%);
+  min-height: 100vh;
+  margin: 0;
+  letter-spacing: 0.02em;
+}
+
+main {
+  padding: 0;
+  background: none;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 0;
+  color: #e0e0e0;
+}
+
+a {
+  text-decoration: none;
+  color: #ffe066;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+a:hover {
+  color: #fff;
+}
